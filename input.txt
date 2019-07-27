@@ -1,0 +1,4 @@
+      permit ip host 2.2.2.2 host 3.3.3.3
+      permit tcp host 1.1.1.1 host 5.5.5.5 eq www
+      permit icmp any any
+      permit udp host 6.6.6.6 10.10.10.0 0.0.0.255 eq domain
