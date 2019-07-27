@@ -13,8 +13,10 @@ def convert_ace_data(ace):
         x = []
         i = 2
         while i < len(lines):
-            if lines[i] == 'eq':
+            if lines[i] == 'eq' or lines[i] == 'lt' or lines[i] == 'gt':
                 i = i + 1
+            elif lines[i] == 'range':
+                i = i + 2
             elif lines[i] == 'any':
                 x.extend([0, 0])
             elif lines[i] == 'host':
@@ -33,7 +35,7 @@ def convert_ace_data(ace):
 def cmp_data(model, ref):
     return ((model['src'] & ref['src_mask']) == ref['src']) and ((model['dst'] & ref['dst_mask']) == ref['dst'])
 
-trgt = 'permit ip host 6.6.6.6 host 10.10.10.1'
+trgt = 'permit ip host 10.66.86.1 host 192.168.1.2'
 file = 'input.txt'
 fp = open(file, 'r')
 arr = []

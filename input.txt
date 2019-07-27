@@ -1,4 +1,19 @@
       permit ip host 2.2.2.2 host 3.3.3.3
       permit tcp host 1.1.1.1 host 5.5.5.5 eq www
       permit icmp any any
+      permit udp 6.6.6.0 0.0.0.255 10.10.10.0 0.0.0.255 eq domain
+      permit ip host 2.2.2.2 host 3.3.3.3
+      permit tcp host 1.1.1.1 host 5.5.5.5 eq www
       permit udp host 6.6.6.6 10.10.10.0 0.0.0.255 eq domain
+      permit gre host 4.4.4.4 host 8.8.8.8
+      permit ip any range 1024 2048 host 192.168.1.2 eq 80
+     permit ip 192.168.0.0 255.255.255.255 10.66.85.0 0.0.0.255
+    permit ip host 192.168.5.5 10.0.0.0 0.0.0.255
+     permit tcp host 10.66.86.1 lt 65530 any eq 22
+     permit tcp any host 192.168.1.2 eq 80
+     permit ip 10.66.86.0 0.0.0.255 gt 1024 192.168.1.0 0.0.0.255
+     permit ip any any
+     permit tcp 10.1.1.0 0.0.0.255 eq 80 192.168.0.0 0.0.0.255
+     permit tcp host 10.66.86.1 gt 1024 192.168.1.2 0.0.255.0 range 0 100
+     permit ip 10.66.85.0 0.0.255.1 192.168.0.0 0.0.255.3 eq 80
+    permit ip 10.66.86.0 0.0.255.1 range 100 23000 192.168.0.0 0.0.255.255 eq 8
